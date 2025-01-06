@@ -468,6 +468,7 @@ section .formulario{
 }
 
 form{
+    padding: 50px;
     max-width: 500px;
     margin: 0 auto;
     display: flex;
@@ -554,4 +555,59 @@ form textarea{
     .btn-enviar {
         max-width: 100%;
     }
+}
+
+
+footer {
+    padding: 100px 4%;
+    box-shadow: 0 0 40px 10px #00000083;
+    background-color: #f8f9fa; 
+}
+
+footer .flex {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    flex-wrap: wrap; 
+}
+
+.line-footer {
+    flex: 1;
+    text-align: center; 
+    margin: 10px;
+}
+
+.btn-social {
+    display: flex;
+    justify-content: center;
+}
+
+.btn-social button {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: none;
+    background-color: rgb(10, 77, 54);
+    color: white;
+    font-size: 22px;
+    cursor: pointer;
+    margin: 0 5px;
+    transition: background-color 0.2s;
+}
+
+.btn-social button:hover {
+    background-color: rgb(27, 158, 114);
+    transition: background-color 0.5s;
+}
+
+footer .line-footer p i {
+    font-size: 22px;
+    color: #000;
+
+}
+
+footer .line-footer p a {
+    color: #000;
+    font-size: 20px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
