@@ -6,26 +6,63 @@
 
 
 
+
+
 .container-header {
     background-color: rgb(33, 88, 70);
+    padding: 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
-.header_right, a {
-    text-align: center;
-    font-size: 30px;
+.header_right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.header_right a {
+    font-size: clamp(1rem, 2vw, 1.875rem);
     color: rgb(253, 251, 251);
-    padding: 35px;
+    padding: clamp(0.5rem, 1.5vw, 2.188rem);
     text-decoration: none;
+    transition: color 0.3s, border-bottom 0.3s;
 }
 
 .home, .contact, .about {
-    padding: 25px;
-    margin: 20px;
+    padding: clamp(0.5rem, 1vw, 1.563rem);
+    margin: clamp(0.5rem, 1vw, 1.25rem);
 }
 
 .home:hover, .contact:hover, .about:hover {
-    color: rgb(88, 51, 4);
-    border-bottom: 1px solid rgb(88, 51, 4);
+    color: rgb(255, 206, 143);
+    border-bottom: 1px solid rgb(255, 206, 143);
+}
+
+@media (max-width: 768px) {
+    .header_right {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .header_right a {
+        padding: 0.75rem;
+        margin: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .container-header {
+        padding: 0.5rem;
+    }
+    
+    .header_right a {
+        font-size: 1rem;
+        padding: 0.5rem;
+    }
 }
 
 .content {
@@ -314,102 +351,148 @@
 }
 
 .MyProjectBack {
-    padding: 20px;
+    padding: clamp(1rem, 3vw, 2rem);
     text-align: center;
-    background-color: #f8f9fa; 
+    background-color: #f8f9fa;
 }
 
 .MyProjectBack h2 {
-    font-size: 32px;
-    line-height: 4.5;
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    line-height: 1.5;
     color: #333;
-    margin-bottom: 20px;
+    margin: 2rem 0;
 }
 
 .project-back-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-}
-
-.MyProjectBack {
-    padding: 20px;
-    text-align: center;
-    background-color: #f8f9fa; 
-}
-
-.MyProjectBack h2 {
-    font-size: 32px;
-    line-height: 4.5;
-    color: #333;
-    margin-bottom: 20px;
-}
-
-.project-back-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: clamp(1rem, 2vw, 2rem);
+    padding: 1rem;
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
 .project-back-item {
-    flex: 1 1 300px; 
-}
-
-.project-back-item a {
-    text-decoration: none; 
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
 }
 
 .project-back-item button {
-    display: flex;
-    flex-direction: column; 
-    align-items: center;
-    justify-content: center; 
-    width: 100%; 
-    padding: 20px; 
+    width: clamp(200px, 80%, 400px);
+    padding: clamp(1rem, 2vw, 1.5rem);
+    margin: 1rem;
     border: none;
     border-radius: 8px;
-    background-color: #001b38; 
+    background-color: #09478a;
     color: #fff;
-    font-size: 18px;
+    font-size: clamp(1rem, 1.5vw, 1.125rem);
     font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 .project-back-item button p {
-    margin-top: 10px;
-    font-size: 16px;
-    color: #e0e0e0; 
-    font-weight: normal;
+    margin-top: 0.8rem;
+    font-size: clamp(0.875rem, 1.2vw, 1rem);
+    color: #e0e0e0;
 }
 
 .project-back-item button:hover {
-    background-color: #0056b3; 
-    transform: scale(1.05); 
+    background-color: #0056b3;
+    transform: scale(1.03);
 }
 
-/* Responsividade */
-@media (max-width: 768px) {
-    .MyProjectBack h2 {
-        font-size: 24px;
-    }
-
-    .project-back-container {
-        flex-direction: column;
-    }
-
+/* Desktop screens */
+@media (min-width: 1024px) {
     .project-back-item button {
-        padding: 15px;
-        font-size: 16px;
+        width: 800px;
+        padding: 2.5rem;
+        font-size: 1.5rem;
     }
 
     .project-back-item button p {
-        font-size: 14px;
+        font-size: 1.25rem;
     }
 }
 
+/* Tablet */
+@media (max-width: 1023px) {
+    .project-back-item button {
+        width: 90%;
+        padding: 2rem;
+    }
+}
 
+/* Mobile */
+@media (max-width: 480px) {
+    .project-back-item button {
+        width: 95%;
+        padding: 1.5rem;
+        font-size: 1rem;
+    }
+    
+    .project-back-item button p {
+        font-size: 0.875rem;
+    }
+}
+
+/*Contact*/
+section .formulario{
+    padding: 80px 4%;
+}
+
+.formulario h2{
+    padding: 60px;
+    margin: auto;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 50px;
+}
+
+form{
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+form input, form textarea{
+    width: 100%;
+    background-color: #85858544;
+    border: 0;
+    padding: 20px 15px;
+    border-radius: 15px;
+    color: #000000;
+    font-size: 18px;
+}
+
+
+form input::placeholder{
+    color: #000000;
+}
+
+form textarea{
+    resize: none;
+    max-height: 100px;
+}
+
+form .btn-enviar{
+    margin: 40px;
+    text-align: center;
+}
+
+form .btn-enviar input{
+    width: 320px;
+    height: 75px;
+    background-color: rgb(44, 109, 87);
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+form .btn-enviar input:hover{
+    background-color: rgb(55, 168, 130);
+    transition: .5s;
+}

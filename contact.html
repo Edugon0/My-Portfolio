@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="container-header">
+            <div class="header_right">
+                <a class="home" href="index.html">Home</a>
+                <a class="about" href="about_me.html">Sobre mim</a>
+                <a class="contact" href="contact.html">Contate-me</a>
+            </div>
+        </div>
+    </header>
+    
+<section class="formulario">
+    <div>
+        <h2>Fale Comigo</h2>
+
+        <form action="https://formsubmit.co/eduardo.vic.goncalves@gmail.com" method="POST">
+            <input type="text" name="name" placeholder="Digite o seu nome:" required>
+            <input type="email" name="email" placeholder="Digite o seu E-mail:" required>
+            <input type="text" name="number" id="" placeholder="Digite o seu celular:">
+            <textarea name="message" id="" placeholder="Digite sua mensagem" required></textarea>
+            <button class="btn-enviar" type="submit">ENVIAR</button>
+
+            
+            <input type="hidden" name="_subject" value="New submission!">
+            <input type="text" name="_honey" style="display:none">
+            <input type="hidden" name="_captcha" value="false">
+       
+       </form> 
+
+    </div>
+</section>
+
+</body>
+</html>
